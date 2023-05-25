@@ -43,18 +43,16 @@ public class BoardPanel extends JPanel
 	private JTextField redScore;
 	private JTextPane redScoreBreakdown;
 	private int redNumScore;
-	private int redNumGreen;
-	private int redNumOrange;
-	private int redNumPurple;
-	private int redNumPoison;
+	private int redNumCubes;
+	private int redNumBottles;
+	private int redNumTower;
 	private int redNumPenalties;
 	private JTextField blueScore;
 	private JTextPane blueScoreBreakdown;
 	private int blueNumScore;
-	private int blueNumGreen;
-	private int blueNumOrange;
-	private int blueNumPurple;
-	private int blueNumPoison;
+	private int blueNumCubes;
+	private int blueNumBottles;
+	private int blueNumTower;
 	private int blueNumPenalties;
 	private SpringLayout overallLayout;
 
@@ -108,7 +106,7 @@ public class BoardPanel extends JPanel
 		redScore.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(110, 7, 9), new Color(110, 7, 9), null, null));
 
 		// SETUP AND STYLIZE RED SCORE BREAKWON
-		redScoreBreakdown.setText("\n\nGreen Points:\n" + 0 + "\n\nOrange Points:\n" + 0 + "\n\nPurple Points:\n" + 0 + "\n\nPoison Damage:\n" + 0 + "\n\nPenalties:\n" + 0 + "\n\n");
+		redScoreBreakdown.setText("\n\n\nBottle Points:\n" + 0 + "\n\n\nCube Points:\n" + 0 + "\n\n\nTower Destruction:\n" + 0 + "\n\n\nPenalties:\n" + 0 + "\n\n");
 		redScoreBreakdown.setFont(new Font("Kohinoor Gujarati", Font.BOLD, 28));
 		redScoreBreakdown.setPreferredSize(new Dimension((screenWidth - (int) (screenWidth / 2.75) * 2) / 2, (int) (screenWidth / 2.75)));
 		redScoreBreakdown.setEditable(false);
@@ -134,7 +132,7 @@ public class BoardPanel extends JPanel
 		blueScore.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(4, 2, 84), new Color(4, 2, 84), null, null));
 		
 		// SETUP AND STYLIZE BLUE SCORE BREAKDOWN
-		blueScoreBreakdown.setText("\n\nGreen Points:\n" + 0 + "\n\nOrange Points:\n" + 0 + "\n\nPurple Points:\n" + 0 + "\n\nPoison Damage:\n" + 0 + "\n\nPenalties:\n" + 0 + "\n\n");
+		blueScoreBreakdown.setText("\n\n\nBottle Points:\n" + 0 + "\n\n\nCube Points:\n" + 0 + "\n\n\nTower Destruction:\n" + 0 + "\n\n\nPenalties:\n" + 0 + "\n\n" );
 		blueScoreBreakdown.setFont(new Font("Kohinoor Gujarati", Font.BOLD, 28));
 		blueScoreBreakdown.setPreferredSize(new Dimension((screenWidth - (int) (screenWidth / 2.75) * 2) / 2, (int) (screenWidth / 2.75)));
 		blueScoreBreakdown.setEditable(false);
@@ -198,59 +196,113 @@ public class BoardPanel extends JPanel
 				{
 					switch (keyboard.getKeyChar())
 					{
-					case 'q':
-						redNumGreen += 2;
+					case 'q': //Green Cubes
+						redNumCubes += 1;
 						break;
-					case 'w':
-						redNumOrange += 4;
+					case 'Q': //Undo Green Cubes
+						redNumCubes -= 1;
 						break;
-					case 'e':
-						redNumPurple += 6;
+					case 'w': //Orange Cubes
+						redNumCubes += 2;
 						break;
-					case 'a':
-						redNumPoison -= 3;
+					case 'W': //Undo Orange Cubes
+						redNumCubes -= 2;
 						break;
-					case 's':
-						redNumPoison -= 5;
+					case 'e': //Purple Cubes
+						redNumCubes += 3;
 						break;
-					case 'd':
-						redNumPoison -= 7;
+					case 'E': //Undo Purple Cubes
+						redNumCubes -= 3;
 						break;
-					case 'z':
-						redNumPenalties -= 1;
+					case 'a': //Green Bottle
+						redNumBottles += 4;
 						break;
-					case 'x':
-						redNumPenalties -= 2;
+					case 'A': //Undo Green Bottle
+						redNumBottles -= 4;
 						break;
-					case 'c':
-						redNumPenalties -= 3;
+					case 's': //Orange Bottle
+						redNumBottles += 5;
 						break;
-					case 'i':
-						blueNumGreen += 2;
+					case 'S': //Undo Orange Bottle
+						redNumBottles -= 5;
 						break;
-					case 'o':
-						blueNumOrange += 4;
+					case 'd': //Purple Bottle
+						redNumBottles += 6;
 						break;
-					case 'p':
-						blueNumPurple += 6;
+					case 'D': //Undo Purple Bottle
+						redNumBottles -= 6;
 						break;
-					case 'j':
-						blueNumPoison -= 3;
+					case 'z': //Green Tower Fallen
+						redNumTower -= 4;
 						break;
-					case 'k':
-						blueNumPoison -= 5;
+					case 'Z': //Undo Green Tower Fallen
+						redNumTower += 4;
 						break;
-					case 'l':
-						blueNumPoison -= 7;
+					case 'x': //Orange Tower Fallen
+						redNumTower -= 5;
 						break;
-					case 'n':
-						blueNumPenalties -= 1;
+					case 'X': //Undo Orange Tower Fallen
+						redNumTower += 5;
 						break;
-					case 'm':
-						blueNumPenalties -= 2;
+					case 'c': //Purple Tower Fallen
+						redNumTower -= 6;
 						break;
-					case ',':
-						blueNumPenalties -= 3;
+					case 'C': //Undo Purple Tower Fallen
+						redNumTower += 6;
+						break;
+					case 'i': //Green Cube
+						blueNumCubes += 1;
+						break;
+					case 'I': //Undo Green Cube
+						blueNumCubes -= 1;
+						break;
+					case 'o': //Orange Cube
+						blueNumCubes += 2;
+						break;
+					case 'O': //Undo Orange Cube
+						blueNumCubes -= 2;
+						break;
+					case 'p': //Purple Cube
+						blueNumCubes += 3;
+						break;
+					case 'P': //Undo Purple Cube
+						blueNumCubes -= 3;
+						break;
+					case 'j': //Green Bottle
+						blueNumBottles += 4;
+						break;
+					case 'J': //Undo Green Bottle
+						blueNumBottles -= 4;
+						break;
+					case 'k': //Orange Bottle
+						blueNumBottles += 5;
+						break;
+					case 'K': //Undo Orange Bottle
+						blueNumBottles -= 5;
+						break;
+					case 'l': //Purple Bottle
+						blueNumBottles += 6;
+						break;
+					case 'L': //Undo Purple Bottle
+						blueNumBottles -= 6;
+						break;
+					case 'n': //Green Tower Fallen
+						blueNumTower -= 4;
+						break;
+					case 'N': //Undo Green Tower Fallen
+						blueNumTower += 4;
+						break;
+					case 'm': //Orange Tower Fallen
+						blueNumTower -= 5;
+						break;
+					case 'M': //Undo Orange Tower Fallen
+						blueNumTower += 5;
+						break;
+					case ',': //Purple Tower Fallen
+						blueNumTower -= 6;
+						break;
+					case '<': //Undo Purple Tower Fallen
+						blueNumTower += 6;
 						break;
 					case 'g':
 
@@ -262,15 +314,11 @@ public class BoardPanel extends JPanel
 					}
 					
 					// UPDATE TEXT VALUES EVERY KEY PRESS
-					redScoreBreakdown.setText("\n\nGreen Points:\n" + redNumGreen + "\n\nOrange Points:\n"
-							+ redNumOrange + "\n\nPurple Points:\n" + redNumPurple + "\n\nPoison Damage:\n"
-							+ redNumPoison + "\n\nPenalties:\n" + redNumPenalties + "\n\n");
-					redNumScore = redNumGreen + redNumOrange + redNumPurple + redNumPoison + redNumPenalties;
+					redScoreBreakdown.setText("\n\n\nBottle Points:\n" + redNumBottles + "\n\n\nCube Points:\n" + redNumCubes + "\n\n\nTower Destruction:\n" + redNumTower + "\n\n\nPenalties:\n" + redNumPenalties + "\n\n");
+					redNumScore = redNumBottles + redNumCubes + redNumTower + redNumPenalties;
 					redScore.setText(redNumScore + "");
-					blueScoreBreakdown.setText("\n\nGreen Points:\n" + blueNumGreen + "\n\nOrange Points:\n"
-							+ blueNumOrange + "\n\nPurple Points:\n" + blueNumPurple + "\n\nPoison Damage:\n"
-							+ blueNumPoison + "\n\nPenalties:\n" + blueNumPenalties + "\n\n");
-					blueNumScore = blueNumGreen + blueNumOrange + blueNumPurple + blueNumPoison + blueNumPenalties;
+					blueScoreBreakdown.setText("\n\n\nBottle Points:\n" + blueNumBottles + "\n\n\nCube Points:\n" + blueNumCubes + "\n\n\nTower Destruction:\n" + blueNumTower + "\n\n\nPenalties:\n" + blueNumPenalties + "\n\n");
+					blueNumScore = blueNumBottles + blueNumCubes + blueNumTower + blueNumPenalties;
 					blueScore.setText(blueNumScore + "");
 					
 					pressedKeys.add(keyboard.getKeyCode());
