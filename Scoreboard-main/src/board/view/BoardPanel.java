@@ -106,7 +106,7 @@ public class BoardPanel extends JPanel
 		redScore.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(110, 7, 9), new Color(110, 7, 9), null, null));
 
 		// SETUP AND STYLIZE RED SCORE BREAKWON
-		redScoreBreakdown.setText("\n\n\nBottle Points:\n" + 0 + "\n\n\nCube Points:\n" + 0 + "\n\n\nTower Destruction:\n" + 0 + "\n\n\nPenalties:\n" + 0 + "\n\n");
+		redScoreBreakdown.setText("\nBottle Points:\n" + 0 + "\n\nCube Points:\n" + 0 + "\n\nTower Destruction:\n" + 0 + "\n\nPenalties:\n" + 0 + "\n\n");
 		redScoreBreakdown.setFont(new Font("Kohinoor Gujarati", Font.BOLD, 28));
 		redScoreBreakdown.setPreferredSize(new Dimension((screenWidth - (int) (screenWidth / 2.75) * 2) / 2, (int) (screenWidth / 2.75)));
 		redScoreBreakdown.setEditable(false);
@@ -132,7 +132,7 @@ public class BoardPanel extends JPanel
 		blueScore.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(4, 2, 84), new Color(4, 2, 84), null, null));
 		
 		// SETUP AND STYLIZE BLUE SCORE BREAKDOWN
-		blueScoreBreakdown.setText("\n\n\nBottle Points:\n" + 0 + "\n\n\nCube Points:\n" + 0 + "\n\n\nTower Destruction:\n" + 0 + "\n\n\nPenalties:\n" + 0 + "\n\n" );
+		blueScoreBreakdown.setText("\nBottle Points:\n" + 0 + "\n\nCube Points:\n" + 0 + "\n\nTower Destruction:\n" + 0 + "\n\nPenalties:\n" + 0 + "\n\n" );
 		blueScoreBreakdown.setFont(new Font("Kohinoor Gujarati", Font.BOLD, 28));
 		blueScoreBreakdown.setPreferredSize(new Dimension((screenWidth - (int) (screenWidth / 2.75) * 2) / 2, (int) (screenWidth / 2.75)));
 		blueScoreBreakdown.setEditable(false);
@@ -314,10 +314,10 @@ public class BoardPanel extends JPanel
 					}
 					
 					// UPDATE TEXT VALUES EVERY KEY PRESS
-					redScoreBreakdown.setText("\n\n\nBottle Points:\n" + redNumBottles + "\n\n\nCube Points:\n" + redNumCubes + "\n\n\nTower Destruction:\n" + redNumTower + "\n\n\nPenalties:\n" + redNumPenalties + "\n\n");
+					redScoreBreakdown.setText("\nBottle Points:\n" + redNumBottles + "\n\nCube Points:\n" + redNumCubes + "\n\nTower Destruction:\n" + redNumTower + "\n\nPenalties:\n" + redNumPenalties + "\n\n");
 					redNumScore = redNumBottles + redNumCubes + redNumTower + redNumPenalties;
 					redScore.setText(redNumScore + "");
-					blueScoreBreakdown.setText("\n\n\nBottle Points:\n" + blueNumBottles + "\n\n\nCube Points:\n" + blueNumCubes + "\n\n\nTower Destruction:\n" + blueNumTower + "\n\n\nPenalties:\n" + blueNumPenalties + "\n\n");
+					blueScoreBreakdown.setText("\nBottle Points:\n" + blueNumBottles + "\n\nCube Points:\n" + blueNumCubes + "\n\nTower Destruction:\n" + blueNumTower + "\n\nPenalties:\n" + blueNumPenalties + "\n\n");
 					blueNumScore = blueNumBottles + blueNumCubes + blueNumTower + blueNumPenalties;
 					blueScore.setText(blueNumScore + "");
 					
