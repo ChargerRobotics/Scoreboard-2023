@@ -250,6 +250,12 @@ public class BoardPanel extends JPanel
 					case 'C': //Undo Purple Tower Fallen
 						redNumTower += 6;
 						break;
+					case '1': //Penalty -1
+						redNumPenalty -= 1;
+						break;
+					case '!': //Undo Penalty -1
+						redNumPenalty += 1;
+						break;
 					case 'i': //Green Cube
 						blueNumCubes += 1;
 						break;
@@ -303,6 +309,12 @@ public class BoardPanel extends JPanel
 						break;
 					case '<': //Undo Purple Tower Fallen
 						blueNumTower += 6;
+						break;
+					case '-': //Penalty -1
+						blueNumPenalty -= 1;
+						break;
+					case '_': //Undo Penalty -1
+						blueNumPenalty += 1;
 						break;
 					case 'g':
 
