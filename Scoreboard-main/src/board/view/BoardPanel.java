@@ -214,6 +214,12 @@ public class BoardPanel extends JPanel
 					case 'E': //Undo Purple Cubes
 						redNumCubes -= 3;
 						break;
+					case 'r': //Cube stack bonus
+						redNumCubes += 3;
+						break;
+					case 'R': //Undo Cube stack bonus
+						redNumCubes -= 3;
+						break;
 					case 'a': //Green Bottle
 						redNumBottles += 4;
 						break;
@@ -272,6 +278,12 @@ public class BoardPanel extends JPanel
 						blueNumCubes += 3;
 						break;
 					case 'P': //Undo Purple Cube
+						blueNumCubes -= 3;
+						break;
+					case 'u': //Cube stack bonus
+						blueNumCubes += 3;
+						break;
+					case 'U': //Undo Cube stack bonus
 						blueNumCubes -= 3;
 						break;
 					case 'j': //Green Bottle
