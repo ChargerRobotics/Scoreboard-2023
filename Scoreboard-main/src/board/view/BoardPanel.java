@@ -251,10 +251,10 @@ public class BoardPanel extends JPanel
 						redNumTower += 6;
 						break;
 					case '1': //Penalty -1
-						redNumPenalty -= 1;
+						redNumPenalties -= 1;
 						break;
 					case '!': //Undo Penalty -1
-						redNumPenalty += 1;
+						redNumPenalties += 1;
 						break;
 					case 'i': //Green Cube
 						blueNumCubes += 1;
@@ -311,10 +311,10 @@ public class BoardPanel extends JPanel
 						blueNumTower += 6;
 						break;
 					case '-': //Penalty -1
-						blueNumPenalty -= 1;
+						blueNumPenalties -= 1;
 						break;
 					case '_': //Undo Penalty -1
-						blueNumPenalty += 1;
+						blueNumPenalties += 1;
 						break;
 					case 'g':
 
